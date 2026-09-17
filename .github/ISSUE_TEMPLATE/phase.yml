@@ -1,0 +1,52 @@
+name: Phase delivery
+description: Track one roadmap phase with explicit dependencies and exit criteria.
+title: "[Phase NN] "
+labels:
+  - phase
+body:
+  - type: input
+    id: milestone
+    attributes:
+      label: Milestone
+      description: Use the matching `Phase NN — Name` milestone.
+      placeholder: Phase 01 — Monorepo Bootstrap
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective and scope
+      description: Copy the objective and bounded task list from the canonical roadmap.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Link prerequisite phase issues. Write `None` only for Phase 0.
+      placeholder: "Blocked by #..."
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Deliverables and tests
+      description: List code/docs artifacts and mandatory tests.
+    validations:
+      required: true
+  - type: textarea
+    id: exit
+    attributes:
+      label: Exit criteria
+      description: Copy the phase exit criteria from the roadmap.
+    validations:
+      required: true
+  - type: checkboxes
+    id: governance
+    attributes:
+      label: Governance
+      options:
+        - label: Dependencies match `docs/project-management/PHASE_TRACKING.md`.
+          required: true
+        - label: No canonical rule is silently overridden.
+          required: true

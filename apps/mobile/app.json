@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "BookFlow",
+    "slug": "bookflow",
+    "version": "0.0.0",
+    "orientation": "portrait",
+    "scheme": "bookflow",
+    "userInterfaceStyle": "automatic",
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    }
+  }
+}

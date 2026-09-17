@@ -1,0 +1,25 @@
+{
+  "name": "@bookflow/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./base": "./base.mjs",
+    "./node": "./node.mjs",
+    "./react": "./react.mjs",
+    "./react-native": "./react-native.mjs"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.12.0",
+    "typescript-eslint": "8.70.0"
+  },
+  "peerDependencies": {
+    "eslint": "^10.0.0",
+    "typescript": ">=5.9.0 <6.1.0"
+  }
+}

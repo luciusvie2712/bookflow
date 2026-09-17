@@ -1,0 +1,25 @@
+{
+  "name": "@bookflow/business-web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3001",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 3001",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:unit": "vitest run --passWithNoTests",
+    "test:integration": "vitest run --passWithNoTests",
+    "test:e2e": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@bookflow/api-client": "workspace:*",
+    "@bookflow/types": "workspace:*",
+    "@bookflow/ui": "workspace:*",
+    "@bookflow/validation": "workspace:*",
+    "next": "16.3.5",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}

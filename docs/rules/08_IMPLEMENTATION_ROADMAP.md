@@ -137,44 +137,58 @@ Khóa quy tắc dự án trước khi code để tránh schema/API/business logi
 
 ### Documentation
 
-- [ ] Commit toàn bộ docs vào `docs/`.
-- [ ] Tạo `docs/rules/`.
-- [ ] Đặt `BookFlow_Project_Overview.md` ở vị trí cố định.
-- [ ] Commit:
-  - [ ] `01_DATABASE_SCHEMA.md`
-  - [ ] `02_CODING_CONVENTIONS.md`
-  - [ ] `03_API_SPECIFICATION.md`
-  - [ ] `04_PROJECT_STRUCTURE.md`
-  - [ ] `05_STATE_MACHINES_AND_BUSINESS_RULES.md`
-  - [ ] `06_ROLES_AND_PERMISSIONS.md`
-  - [ ] `07_ENV_AND_CONFIG.md`
-  - [ ] `08_IMPLEMENTATION_ROADMAP.md`
+- [x] Commit toàn bộ docs vào `docs/`.
+- [x] Tạo `docs/rules/`.
+- [x] Đặt `BookFlow_Project_Overview.md` ở vị trí cố định.
+- [x] Commit:
+  - [x] `01_DATABASE_SCHEMA.md`
+  - [x] `02_CODING_CONVENTIONS.md`
+  - [x] `03_API_SPECIFICATION.md`
+  - [x] `04_PROJECT_STRUCTURE.md`
+  - [x] `05_STATE_MACHINES_AND_BUSINESS_RULES.md`
+  - [x] `06_ROLES_AND_PERMISSIONS.md`
+  - [x] `07_ENV_AND_CONFIG.md`
+  - [x] `08_IMPLEMENTATION_ROADMAP.md`
 
 ### Repository rules
 
-- [ ] Chọn package manager: `pnpm`.
-- [ ] Khóa Node version.
-- [ ] Enable TypeScript strict.
-- [ ] Xác định branch strategy.
-- [ ] Xác định commit convention.
-- [ ] Xác định PR checklist.
-- [ ] Thêm `.editorconfig`.
-- [ ] Thêm `.gitignore`.
-- [ ] Thêm `.env.example`.
-- [ ] Không commit secret.
+- [x] Chọn package manager: `pnpm`.
+- [x] Khóa Node version.
+- [x] Enable TypeScript strict.
+- [x] Xác định branch strategy.
+- [x] Xác định commit convention.
+- [x] Xác định PR checklist.
+- [x] Thêm `.editorconfig`.
+- [x] Thêm `.gitignore`.
+- [x] Thêm `.env.example`.
+- [x] Không commit secret.
 
 ### Tracking
 
-- [ ] Tạo issue/milestone tương ứng từng phase.
-- [ ] Mỗi issue ghi rõ dependency.
-- [ ] Critical bugs dùng severity.
-- [ ] Architectural decision quan trọng ghi vào docs.
+- [x] Tạo issue/milestone tương ứng từng phase.
+- [x] Mỗi issue ghi rõ dependency.
+- [x] Critical bugs dùng severity.
+- [x] Architectural decision quan trọng ghi vào docs.
 
 ## Deliverables
 
 ```text
+.editorconfig
+.env.example
+.gitignore
+.node-version
+.nvmrc
+CONTRIBUTING.md
+package.json
+tsconfig.json
+.github/
+├── PULL_REQUEST_TEMPLATE.md
+└── ISSUE_TEMPLATE/
 docs/
 ├── BookFlow_Project_Overview.md
+├── README.md
+├── adr/
+├── project-management/
 └── rules/
     ├── 01_DATABASE_SCHEMA.md
     ├── 02_CODING_CONVENTIONS.md
@@ -203,60 +217,60 @@ Khởi tạo Turborepo và toàn bộ application/package boundaries.
 
 ### Root
 
-- [ ] Khởi tạo workspace `pnpm`.
-- [ ] Khởi tạo Turborepo.
-- [ ] Tạo root `package.json`.
-- [ ] Tạo `pnpm-workspace.yaml`.
-- [ ] Tạo `turbo.json`.
-- [ ] Tạo shared lint config.
-- [ ] Tạo shared TypeScript config.
-- [ ] Thêm root scripts:
-  - [ ] `dev`
-  - [ ] `build`
-  - [ ] `lint`
-  - [ ] `typecheck`
-  - [ ] `test`
-  - [ ] `test:unit`
-  - [ ] `test:integration`
-  - [ ] `test:e2e`
-  - [ ] `db:generate`
-  - [ ] `db:migrate`
-  - [ ] `db:seed`
+- [x] Khởi tạo workspace `pnpm`.
+- [x] Khởi tạo Turborepo.
+- [x] Tạo root `package.json`.
+- [x] Tạo `pnpm-workspace.yaml`.
+- [x] Tạo `turbo.json`.
+- [x] Tạo shared lint config.
+- [x] Tạo shared TypeScript config.
+- [x] Thêm root scripts:
+  - [x] `dev`
+  - [x] `build`
+  - [x] `lint`
+  - [x] `typecheck`
+  - [x] `test`
+  - [x] `test:unit`
+  - [x] `test:integration`
+  - [x] `test:e2e`
+  - [x] `db:generate`
+  - [x] `db:migrate`
+  - [x] `db:seed`
 
 ### Applications
 
-- [ ] `apps/api` — NestJS.
-- [ ] `apps/worker` — BullMQ worker hoặc bootstrap tách riêng.
-- [ ] `apps/customer-web` — Next.js.
-- [ ] `apps/business-web` — Next.js.
-- [ ] `apps/admin-web` — Next.js.
-- [ ] `apps/mobile` — Expo + Expo Router.
+- [x] `apps/api` — NestJS.
+- [x] `apps/worker` — BullMQ worker hoặc bootstrap tách riêng.
+- [x] `apps/customer-web` — Next.js.
+- [x] `apps/business-web` — Next.js.
+- [x] `apps/admin-web` — Next.js.
+- [x] `apps/mobile` — Expo + Expo Router.
 
 ### Shared packages
 
-- [ ] `packages/types`.
-- [ ] `packages/validation`.
-- [ ] `packages/api-client`.
-- [ ] `packages/domain-contracts`.
-- [ ] `packages/ui`.
-- [ ] `packages/eslint-config`.
-- [ ] `packages/tsconfig`.
+- [x] `packages/types`.
+- [x] `packages/validation`.
+- [x] `packages/api-client`.
+- [x] `packages/domain-contracts`.
+- [x] `packages/ui`.
+- [x] `packages/eslint-config`.
+- [x] `packages/tsconfig`.
 
 ### Dependency boundaries
 
-- [ ] Client packages không import NestJS/Prisma/server-only code.
-- [ ] `packages/types` không phụ thuộc database runtime.
-- [ ] `packages/api-client` chỉ chứa network/client contract.
-- [ ] `packages/ui` không chứa domain/service logic.
-- [ ] `apps/mobile` không import web-only modules.
-- [ ] Không tạo package chung chỉ để tránh vài dòng duplicate nếu làm sai boundary.
+- [x] Client packages không import NestJS/Prisma/server-only code.
+- [x] `packages/types` không phụ thuộc database runtime.
+- [x] `packages/api-client` chỉ chứa network/client contract.
+- [x] `packages/ui` không chứa domain/service logic.
+- [x] `apps/mobile` không import web-only modules.
+- [x] Không tạo package chung chỉ để tránh vài dòng duplicate nếu làm sai boundary.
 
 ## Tests
 
-- [ ] `pnpm lint`.
-- [ ] `pnpm typecheck`.
-- [ ] Build từng app rỗng.
-- [ ] Turbo task graph hoạt động.
+- [x] `pnpm lint`.
+- [x] `pnpm typecheck`.
+- [x] Build từng app rỗng.
+- [x] Turbo task graph hoạt động.
 
 ## Exit criteria
 

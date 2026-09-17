@@ -1,0 +1,41 @@
+{
+  "name": "@bookflow/mobile",
+  "version": "0.0.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "dev": "expo start --port 8083",
+    "build": "expo export --platform web --output-dir dist",
+    "start": "expo start --port 8083",
+    "android": "expo start --android --port 8083",
+    "ios": "expo start --ios --port 8083",
+    "web": "expo start --web --port 8083",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:unit": "vitest run --passWithNoTests",
+    "test:integration": "vitest run --passWithNoTests",
+    "test:e2e": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@bookflow/api-client": "workspace:*",
+    "@bookflow/types": "workspace:*",
+    "@bookflow/validation": "workspace:*",
+    "@expo/log-box": "57.0.4",
+    "@expo/metro-runtime": "57.0.15",
+    "@react-native/metro-config": "0.86.3",
+    "expo": "57.0.23",
+    "expo-constants": "57.0.18",
+    "expo-linking": "57.0.10",
+    "expo-router": "57.0.21",
+    "expo-status-bar": "57.0.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "5.7.0",
+    "react-native-screens": "4.26.0",
+    "react-native-worklets": "0.10.1",
+    "react-native-web": "0.21.2"
+  }
+}
