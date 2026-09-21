@@ -19,7 +19,7 @@ explicitly documents a safe exception.
 | 00 | Phase 00 — Project Governance & Execution Baseline | None | DONE |
 | 01 | Phase 01 — Monorepo Bootstrap | 00 | DONE |
 | 02 | Phase 02 — Local Infrastructure & Config Foundation | 01 | DONE |
-| 03 | Phase 03 — Database Baseline, Prisma & Migrations | 02 | NOT_STARTED |
+| 03 | Phase 03 — Database Baseline, Prisma & Migrations | 02 | DONE |
 | 04 | Phase 04 — Authentication & Session Security | 03 | NOT_STARTED |
 | 05 | Phase 05 — Multi-tenancy, Membership & RBAC | 04 | NOT_STARTED |
 | 06 | Phase 06 — Business Onboarding & Master Data | 05 | NOT_STARTED |

@@ -22,9 +22,28 @@ pnpm db:seed
 pnpm dev
 ```
 
-`db:migrate` and `db:seed` remain safe connectivity placeholders until Prisma
-and the canonical schema arrive in Phase 3. They are already part of the stable
-root command surface.
+`db:migrate` applies committed Prisma migrations without rewriting migration
+history. `db:seed` generates Prisma Client and idempotently installs the
+canonical permission registry plus local demo data.
+
+## Database workflow
+
+```bash
+# Validate and generate the Prisma Client
+pnpm --filter @bookflow/api db:validate
+pnpm db:generate
+
+# Create a new local migration after editing schema.prisma
+pnpm db:migrate:dev -- --name add_booking_indexes
+
+# Rebuild a disposable local database from migrations + seed
+pnpm db:reset
+```
+
+Migration names use `<YYYYMMDDHHMMSS>_<snake_case_description>`. Never edit a
+migration already applied to a shared, staging, or production database. The
+reset command destroys the configured database and must only target disposable
+local development data.
 
 For an explicit infrastructure readiness wait, use `pnpm infra:up`. Shut down
 containers with `pnpm infra:down`; named volumes are retained so local data is
@@ -70,4 +89,7 @@ pnpm build
 ```
 
 Integration tests require the Compose stack. They verify PostgreSQL and Redis
-connectivity plus an actual MinIO put/get/delete cycle.
+connectivity plus an actual MinIO put/get/delete cycle. The Phase 3 database
+suite also creates an isolated temporary PostgreSQL database, applies every
+committed migration, runs the development seed, verifies foreign keys, unique
+and check constraints, and drops the temporary database afterward.

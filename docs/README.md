@@ -49,3 +49,4 @@ code comments. Consequential decisions are recorded in
 ## Developer guides
 
 - [Local development and infrastructure](LOCAL_DEVELOPMENT.md)
+- [Canonical database schema](rules/01_DATABASE_SCHEMA.md)

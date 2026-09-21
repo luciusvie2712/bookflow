@@ -82,16 +82,16 @@ The following tables do not require a redundant `business_id` when every query i
 
 ## 4. Canonical Prisma schema
 
-The following schema is the canonical baseline. It intentionally leaves generic status fields as `String` where the overview did not define a complete state vocabulary.
+The following schema is the canonical baseline. It intentionally leaves generic status fields as `String` where the overview did not define a complete state vocabulary. Prisma ORM 7 reads `DATABASE_URL` from `apps/api/prisma.config.ts`; credentials do not live in the schema file.
 
 ```prisma
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 enum DepositType {
@@ -253,6 +253,7 @@ model Business {
   updatedAt          DateTime               @updatedAt @map("updated_at") @db.Timestamptz(6)
 
   owner             User                   @relation("BusinessOwner", fields: [ownerUserId], references: [id], onDelete: Restrict)
+  subscriptionPlan  SubscriptionPlan?      @relation("CurrentSubscriptionPlan", fields: [subscriptionPlanId], references: [id], onDelete: SetNull)
   branches          Branch[]
   members           BusinessMember[]
   roles             Role[]
@@ -966,8 +967,9 @@ model SubscriptionPlan {
   createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
   updatedAt       DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
 
-  features      PlanFeature[]
-  subscriptions BusinessSubscription[]
+  features          PlanFeature[]
+  subscriptions     BusinessSubscription[]
+  currentBusinesses Business[]             @relation("CurrentSubscriptionPlan")
 
   @@map("subscription_plans")
 }
@@ -1043,6 +1045,10 @@ Add these as explicit SQL migrations where applicable:
 8. Voucher percentage `value` must be `1..10000` basis points; fixed `value` must be non-negative minor units.
 9. Queue ticket uniqueness is `(branch_id, business_date, ticket_number)`.
 10. A booking may have only one active queue ticket at a time. Enforce through transaction/partial unique index if the implementation uses a database partial index.
+11. Service/staff override durations must be positive; buffers and queue sequence counters must be non-negative.
+12. `PENDING_PAYMENT` bookings require `hold_expires_at`; discount/deposit totals may not exceed their canonical booking totals.
+13. Voucher validity and subscription billing periods require start `<` end; optional usage limits must be positive.
+14. Media sizes and notification delivery attempt counts must be non-negative.
 
 ## 6. Relationship summary
 

@@ -351,97 +351,100 @@ Khóa schema thực tế theo `01_DATABASE_SCHEMA.md`.
 
 ### Prisma
 
-- [ ] Tạo `schema.prisma`.
-- [ ] Map table/column theo snake_case.
-- [ ] Model/code dùng PascalCase/camelCase.
-- [ ] Tạo toàn bộ enum canonical.
-- [ ] Tạo relations và foreign keys.
-- [ ] Tạo unique constraints.
-- [ ] Tạo indexes hot path.
+- [x] Tạo `schema.prisma`.
+- [x] Map table/column theo snake_case.
+- [x] Model/code dùng PascalCase/camelCase.
+- [x] Tạo toàn bộ enum canonical.
+- [x] Tạo relations và foreign keys.
+- [x] Tạo unique constraints.
+- [x] Tạo indexes hot path.
 
 ### Core model groups
 
-- [ ] Identity:
-  - [ ] users
-  - [ ] auth_identities
-  - [ ] refresh_tokens
-- [ ] Tenant/RBAC:
-  - [ ] businesses
-  - [ ] business_members
-  - [ ] roles
-  - [ ] permissions
-  - [ ] role_permissions
-  - [ ] member_roles
-- [ ] Catalog:
-  - [ ] branches
-  - [ ] branch_opening_hours
-  - [ ] service_categories
-  - [ ] services
-  - [ ] service_branches
-  - [ ] staff_profiles
-  - [ ] staff_branches
-  - [ ] staff_services
-- [ ] Scheduling:
-  - [ ] staff_working_hours
-  - [ ] staff_breaks
-  - [ ] staff_leaves
-  - [ ] schedule_blocks
-- [ ] Customer/Booking:
-  - [ ] business_customers
-  - [ ] bookings
-  - [ ] booking_services
-- [ ] Queue:
-  - [ ] queue_tickets
-  - [ ] queue_sequences
-- [ ] Payment:
-  - [ ] payments
-  - [ ] payment_events
-  - [ ] refunds
-- [ ] Promotion:
-  - [ ] vouchers
-  - [ ] voucher_usages
-- [ ] Review:
-  - [ ] reviews
-  - [ ] review_media
-- [ ] Notification:
-  - [ ] notifications
-  - [ ] notification_deliveries
-  - [ ] user_devices
-- [ ] Files:
-  - [ ] media_objects
-- [ ] Subscription:
-  - [ ] subscription_plans
-  - [ ] plan_features
-  - [ ] business_subscriptions
-- [ ] Audit:
-  - [ ] audit_logs
+- [x] Identity:
+  - [x] users
+  - [x] auth_identities
+  - [x] refresh_tokens
+- [x] Tenant/RBAC:
+  - [x] businesses
+  - [x] business_members
+  - [x] roles
+  - [x] permissions
+  - [x] role_permissions
+  - [x] member_roles
+- [x] Catalog:
+  - [x] branches
+  - [x] branch_opening_hours
+  - [x] service_categories
+  - [x] services
+  - [x] service_branches
+  - [x] staff_profiles
+  - [x] staff_branches
+  - [x] staff_services
+- [x] Scheduling:
+  - [x] staff_working_hours
+  - [x] staff_breaks
+  - [x] staff_leaves
+  - [x] schedule_blocks
+- [x] Customer/Booking:
+  - [x] business_customers
+  - [x] bookings
+  - [x] booking_services
+- [x] Queue:
+  - [x] queue_tickets
+  - [x] queue_sequences
+- [x] Payment:
+  - [x] payments
+  - [x] payment_configurations
+  - [x] payment_events
+  - [x] refunds
+- [x] Promotion:
+  - [x] vouchers
+  - [x] voucher_branches
+  - [x] voucher_services
+  - [x] voucher_usages
+- [x] Review:
+  - [x] reviews
+  - [x] review_media
+- [x] Notification:
+  - [x] notifications
+  - [x] notification_deliveries
+  - [x] user_devices
+- [x] Files:
+  - [x] media_objects
+- [x] Subscription:
+  - [x] subscription_plans
+  - [x] plan_features
+  - [x] business_subscriptions
+- [x] Audit:
+  - [x] audit_logs
 
 ### Data rules
 
-- [ ] Money dùng integer minor units hoặc canonical Decimal strategy.
-- [ ] Timestamp lưu UTC/timestamptz semantics.
-- [ ] Tenant-scoped tables có `business_id` trực tiếp hoặc ownership path rõ.
-- [ ] Không dùng public queue number làm PK.
-- [ ] Booking snapshot service/price.
-- [ ] Payment provider event id unique.
-- [ ] Review booking id unique.
+- [x] Money dùng integer minor units hoặc canonical Decimal strategy.
+- [x] Timestamp lưu UTC/timestamptz semantics.
+- [x] Tenant-scoped tables có `business_id` trực tiếp hoặc ownership path rõ.
+- [x] Không dùng public queue number làm PK.
+- [x] Booking snapshot service/price.
+- [x] Payment provider event id unique.
+- [x] Review booking id unique.
 
 ### Migrations
 
-- [ ] Initial migration.
-- [ ] Migration naming convention.
-- [ ] Không sửa migration đã được deploy.
-- [ ] Local reset workflow.
-- [ ] Seed development data.
+- [x] Initial migration.
+- [x] Migration naming convention.
+- [x] Không sửa migration đã được deploy.
+- [x] Local reset workflow.
+- [x] Seed development data.
 
 ## Tests
 
-- [ ] FK constraints.
-- [ ] Unique constraints.
-- [ ] Tenant composite uniqueness.
-- [ ] Migration up từ database rỗng.
-- [ ] Seed thành công.
-- [ ] Prisma client generate.
+- [x] FK constraints.
+- [x] Unique constraints.
+- [x] Tenant composite uniqueness.
+- [x] Migration up từ database rỗng.
+- [x] Seed thành công.
+- [x] Prisma client generate.
 
 ## Exit criteria
 
