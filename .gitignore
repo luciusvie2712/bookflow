@@ -12,6 +12,7 @@ coverage/
 .expo-shared/
 web-build/
 *.tsbuildinfo
+apps/api/src/generated/prisma/
 
 # Runtime and debug output
 logs/

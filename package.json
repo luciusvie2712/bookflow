@@ -20,6 +20,8 @@
     "infra:logs": "docker compose logs --follow",
     "db:generate": "pnpm --filter @bookflow/api db:generate",
     "db:migrate": "pnpm --filter @bookflow/api db:migrate",
+    "db:migrate:dev": "pnpm --filter @bookflow/api db:migrate:dev",
+    "db:reset": "pnpm --filter @bookflow/api db:reset",
     "db:seed": "pnpm --filter @bookflow/api db:seed",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
