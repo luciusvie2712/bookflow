@@ -4,31 +4,41 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nest start --watch",
+    "dev": "node --watch --import tsx src/main.ts",
     "build": "nest build",
     "start": "node dist/main.js",
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run",
-    "test:unit": "vitest run --exclude '**/*.integration-spec.ts' --exclude '**/*.e2e-spec.ts'",
-    "test:integration": "vitest run --passWithNoTests '**/*.integration-spec.ts'",
-    "test:e2e": "vitest run --passWithNoTests '**/*.e2e-spec.ts'",
+    "test": "vitest run --exclude '**/*.integration.spec.ts' --exclude '**/*.e2e.spec.ts'",
+    "test:unit": "vitest run --exclude '**/*.integration.spec.ts' --exclude '**/*.e2e.spec.ts'",
+    "test:integration": "vitest run --passWithNoTests integration.spec",
+    "test:e2e": "vitest run --passWithNoTests e2e.spec",
     "db:generate": "node scripts/database-phase-guard.mjs generate",
     "db:migrate": "node scripts/database-phase-guard.mjs migrate",
     "db:seed": "node scripts/database-phase-guard.mjs seed"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "3.1136.0",
     "@bookflow/domain-contracts": "workspace:*",
     "@bookflow/types": "workspace:*",
     "@bookflow/validation": "workspace:*",
     "@nestjs/common": "12.0.3",
     "@nestjs/core": "12.0.3",
     "@nestjs/platform-express": "12.0.3",
+    "@nestjs/swagger": "12.0.1",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.15.1",
+    "helmet": "8.3.0",
+    "ioredis": "5.8.2",
+    "pg": "8.23.0",
     "reflect-metadata": "0.2.2",
-    "rxjs": "7.8.2"
+    "rxjs": "7.8.2",
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "@nestjs/cli": "12.0.3",
-    "@nestjs/testing": "12.0.3"
+    "@nestjs/testing": "12.0.3",
+    "@types/pg": "8.23.1",
+    "tsx": "4.21.0"
   }
 }

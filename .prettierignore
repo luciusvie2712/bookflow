@@ -4,5 +4,6 @@ dist
 .turbo
 coverage
 .expo
+**/expo-env.d.ts
 pnpm-lock.yaml
 docs

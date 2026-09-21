@@ -9,15 +9,16 @@
     "start": "node dist/main.js",
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run",
-    "test:unit": "vitest run --exclude '**/*.integration-spec.ts'",
-    "test:integration": "vitest run --passWithNoTests '**/*.integration-spec.ts'",
-    "test:e2e": "vitest run --passWithNoTests '**/*.e2e-spec.ts'"
+    "test": "vitest run --exclude '**/*.integration.spec.ts' --exclude '**/*.e2e.spec.ts'",
+    "test:unit": "vitest run --exclude '**/*.integration.spec.ts'",
+    "test:integration": "vitest run --passWithNoTests integration.spec",
+    "test:e2e": "vitest run --passWithNoTests e2e.spec"
   },
   "dependencies": {
     "@bookflow/domain-contracts": "workspace:*",
     "bullmq": "6.3.6",
-    "ioredis": "5.8.2"
+    "ioredis": "5.8.2",
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "tsx": "4.21.0"

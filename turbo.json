@@ -1,9 +1,30 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "stream",
+  "globalPassThroughEnv": [
+    "NODE_ENV",
+    "API_HOST",
+    "API_PORT",
+    "LOG_LEVEL",
+    "DATABASE_URL",
+    "REDIS_URL",
+    "STORAGE_ENDPOINT",
+    "STORAGE_REGION",
+    "STORAGE_BUCKET",
+    "STORAGE_ACCESS_KEY_ID",
+    "STORAGE_SECRET_ACCESS_KEY",
+    "STORAGE_FORCE_PATH_STYLE",
+    "CORS_ORIGINS",
+    "SWAGGER_ENABLED",
+    "JWT_ACCESS_SECRET",
+    "JWT_REFRESH_SECRET",
+    "WORKER_QUEUE_ENABLED",
+    "WORKER_CONCURRENCY"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["NEXT_PUBLIC_API_URL", "EXPO_PUBLIC_API_URL"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
