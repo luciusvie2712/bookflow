@@ -45,3 +45,7 @@ Do not leave architectural decisions only in chat messages, issues or source
 code comments. Consequential decisions are recorded in
 [`docs/adr/`](adr/README.md), and delivery status is tracked in
 [`docs/project-management/PHASE_TRACKING.md`](project-management/PHASE_TRACKING.md).
+
+## Developer guides
+
+- [Local development and infrastructure](LOCAL_DEVELOPMENT.md)

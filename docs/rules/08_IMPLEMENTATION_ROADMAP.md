@@ -290,42 +290,42 @@ Có môi trường local tái lập được.
 
 ### Docker Compose
 
-- [ ] PostgreSQL.
-- [ ] Redis.
-- [ ] MinIO hoặc S3-compatible storage.
-- [ ] Mailpit optional.
-- [ ] Healthcheck cho service.
+- [x] PostgreSQL.
+- [x] Redis.
+- [x] MinIO hoặc S3-compatible storage.
+- [x] Mailpit optional.
+- [x] Healthcheck cho service.
 
 ### Environment
 
-- [ ] Root `.env.example`.
-- [ ] Env cho API.
-- [ ] Env cho worker.
-- [ ] Env cho từng web app.
-- [ ] Env cho mobile.
-- [ ] Config validation fail-fast ở API/worker.
-- [ ] Tách public env và server secret.
-- [ ] Không expose JWT/payment/storage secret cho client.
+- [x] Root `.env.example`.
+- [x] Env cho API.
+- [x] Env cho worker.
+- [x] Env cho từng web app.
+- [x] Env cho mobile.
+- [x] Config validation fail-fast ở API/worker.
+- [x] Tách public env và server secret.
+- [x] Không expose JWT/payment/storage secret cho client.
 
 ### API foundation
 
-- [ ] Global validation pipe.
-- [ ] Global exception filter.
-- [ ] Request/correlation ID.
-- [ ] Structured logging.
-- [ ] CORS allowlist.
-- [ ] Security headers.
-- [ ] API prefix `/api/v1`.
-- [ ] Swagger bootstrap.
-- [ ] `/health/live`.
-- [ ] `/health/ready`.
+- [x] Global validation pipe.
+- [x] Global exception filter.
+- [x] Request/correlation ID.
+- [x] Structured logging.
+- [x] CORS allowlist.
+- [x] Security headers.
+- [x] API prefix `/api/v1`.
+- [x] Swagger bootstrap.
+- [x] `/health/live`.
+- [x] `/health/ready`.
 
 ## Tests
 
-- [ ] API fail startup khi thiếu required secret.
-- [ ] Readiness fail đúng khi DB unavailable.
-- [ ] Redis connection test.
-- [ ] Object storage local test.
+- [x] API fail startup khi thiếu required secret.
+- [x] Readiness fail đúng khi DB unavailable.
+- [x] Redis connection test.
+- [x] Object storage local test.
 
 ## Exit criteria
 
